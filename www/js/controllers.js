@@ -1,6 +1,7 @@
 angular.module('starter.controllers', [])
 
     .controller('DashCtrl', function ($scope) {
+      $scope.user = ProfilesDatabase.find(0);
     })
 
     .controller('ChatsCtrl', function ($scope, Chats) {
