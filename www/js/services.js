@@ -180,17 +180,14 @@ var SalasDatabase = new Database([
       EducandosDatabase.find(0),
       EducandosDatabase.find(1),
       EducandosDatabase.find(2)
-    ]),
-]);
-
-var SalasDatabase = new Database([
+  ]),
   new Sala('Curso: Educação financeira para Startups', [
       EducadoresDatabase.find(0),
     ],[
       EducandosDatabase.find(0),
       EducandosDatabase.find(1),
       EducandosDatabase.find(2)
-    ]),
+  ])
 ]);
 
 EducadoresDatabase.find(0).salas.push(SalasDatabase.find(0));
@@ -200,12 +197,12 @@ EducandosDatabase.find(2).salas.push(SalasDatabase.find(0));
 
 var ProvasDatabase = new Database([
   new Prova('Pitch #1',SalasDatabase.find(0)),
-  new Prova('Demonstração Financeira',SalasDatabase.find(0))
+  new Prova('Demonstração Financeira',SalasDatabase.find(1))
 ]);
 
 var NotificacoesDatabase = new Database([
   new Notificacao(ProfilesDatabase.find(6), 'criou', ProvasDatabase.find(0), ProvasDatabase.find(0).sala.educandos),
-  new Notificacao(ProfilesDatabase.find(7), 'criou', ProvasDatabase.find(1), ProvasDatabase.find(1).sala.educandos)
+  new Notificacao(ProfilesDatabase.find(7), 'modificou', ProvasDatabase.find(1), ProvasDatabase.find(1).sala.educandos)
 ]);
 
 ProfilesDatabase.find(0).notificacoes.push(NotificacoesDatabase.find(0));
