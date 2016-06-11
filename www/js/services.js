@@ -111,6 +111,12 @@ function Notificacao(actor, action, object, observers, preview) {
   this.created_at = new Date();
 }
 
+function Medalha(nome) {
+  this.objectname = 'medalha';
+  this.baseurl = 'medalhas';
+  this.nome;
+}
+
 // DATABASES
 
 function Database(data) {
@@ -200,10 +206,22 @@ var ProvasDatabase = new Database([
   new Prova('Demonstração Financeira',SalasDatabase.find(1))
 ]);
 
+var MedalhasDatabase = new Database([
+  new Medalha('Caçador de Zaps!', 'Faça 10x logins em um dia!', 100),
+  new Medalha('Destruidor de provas!', 'Fechou prova com 100%! Só não tirou mais porque não tinha mais questões.', 230),
+  new Medalha('Zerando o ano!','Passe em dois semestres consecutivos com todas notas acima de 60%', 300)
+]);
+
 var NotificacoesDatabase = new Database([
+  new Notificacao(ProfilesDatabase.find(1), 'conquistou', MedalhasDatabase.find(0)),
   new Notificacao(ProfilesDatabase.find(6), 'criou', ProvasDatabase.find(0), ProvasDatabase.find(0).sala.educandos),
-  new Notificacao(ProfilesDatabase.find(7), 'modificou', ProvasDatabase.find(1), ProvasDatabase.find(1).sala.educandos)
+  new Notificacao(ProfilesDatabase.find(2), 'conquistou', MedalhasDatabase.find(1)),
+  new Notificacao(ProfilesDatabase.find(7), 'modificou', ProvasDatabase.find(1), ProvasDatabase.find(1).sala.educandos),
+  new Notificacao(ProfilesDatabase.find(3), 'conquistou', MedalhasDatabase.find(2)),
 ]);
 
 ProfilesDatabase.find(0).notificacoes.push(NotificacoesDatabase.find(0));
 ProfilesDatabase.find(0).notificacoes.push(NotificacoesDatabase.find(1));
+ProfilesDatabase.find(0).notificacoes.push(NotificacoesDatabase.find(2));
+ProfilesDatabase.find(0).notificacoes.push(NotificacoesDatabase.find(3));
+ProfilesDatabase.find(0).notificacoes.push(NotificacoesDatabase.find(4));
