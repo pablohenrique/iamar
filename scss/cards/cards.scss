@@ -1,0 +1,19 @@
+.card__defaultcard{}
+
+.item-body__defaultcard{
+  .defaultcard__info{
+    .col {
+      border-style: solid;
+      border-left-width: 1px;
+      border-right-width: 1px;
+      border-left-color: #ccc;
+      border-right-color: #ccc;
+    }
+    .col:first-child {
+      border-left-width: 0;
+    }
+    .col:last-child {
+      border-right-width: 0;
+    }
+  }
+}
