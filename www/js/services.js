@@ -47,4 +47,48 @@ angular.module('starter.services', [])
       return null;
     }
   };
+})
+
+.factory('Educando', function(name, face) {
+  return {
+    name: name,
+    face: face,
+    coins: 0
+  };
+})
+
+.factory('Educandos', function() {
+
+  var data = [
+    ['Adam','img/adam.jpg'],
+    ['Ben','img/ben.png'],
+    ['Max','img/max.png'],
+    ['Mike','img/mike.png'],
+    ['Perry','img/perry.png']
+  ];
+
+  var educandos = [];
+  for (var i = 0; i < data.length-1; i++) {
+    var dados = data[i];
+    educandos[i] = new Educando(dados[0], dados[1]);
+  }
+
+  window.educandos = educandos;
+
+  return {
+    all: function() {
+      return educandos;
+    },
+    remove: function(educandos) {
+      educandos.splice(chats.indexOf(chat), 1);
+    },
+    get: function(chatId) {
+      for (var i = 0; i < chats.length; i++) {
+        if (chats[i].id === parseInt(chatId)) {
+          return chats[i];
+        }
+      }
+      return null;
+    }
+  };
 });
