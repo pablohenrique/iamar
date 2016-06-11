@@ -32,6 +32,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         $stateProvider
 
         // setup an abstract state for the tabs directive
+        
+            .state('me', {
+                url: '/me',
+                templateUrl: 'templates/me.html',
+                controller: 'MeCtrl'
+            })
+
             .state('tab', {
                 url: '/tab',
                 abstract: true,
@@ -79,12 +86,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
                 }
             })
 
-            .state('tab.other', {
-                url: '/other',
+            .state('tab.ranking', {
+                url: '/ranking',
                 views: {
-                    'tab-other': {
-                        templateUrl: 'templates/tab-other.html',
-                        controller: 'OtherCtrl'
+                    'tab-ranking': {
+                        templateUrl: 'templates/tab-ranking.html',
+                        controller: 'RankingCtrl'
                     }
                 }
             });

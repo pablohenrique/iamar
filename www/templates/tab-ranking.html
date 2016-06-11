@@ -1,0 +1,13 @@
+<ion-view view-title="Chats">
+	<ion-content>
+		<div class="list">
+		    <a class="item item-remove-animate item-avatar" href="#" ng-repeat="educando in educandos">
+		      <img src="{{ educando.profile.face }}">
+		      <h2>{{ educando.profile.name }}</h2>
+		      <p>Ipsum lorem parem da florem.</p>
+		      <div>{{ educando.profile.coins }}</div>
+		    </a>
+		</div>
+		</ion-list>
+	</ion-content>
+</ion-view>
