@@ -15,6 +15,11 @@ angular.module('starter.controllers', [])
         $scope.chat = Chats.get($stateParams.chatId);
     })
 
+    .controller('NotificacaoCtrl', function ($scope, $stateParams) {
+        $scope.notificacao = NotificacoesDatabase.find($stateParams.notificacaoId);
+        //$scope.prova = 0;
+    })
+
     .controller('AccountCtrl', function ($scope) {
         $scope.settings = {
             enableFriends: true

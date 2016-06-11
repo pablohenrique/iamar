@@ -23,14 +23,17 @@
 				<img src="./img/doccheck.svg">
 				<div class="row" style="">
 					<div class="col">
-						<h2>Prova {{index+1}} - Sala {{notificacao.object.sala.name}}</h2>
+						<h2>
+							<a href="#/tab/dash/{{notificacao.baseurl}}/{{notificacao.id}}">
+								Prova {{index+1}} - Sala {{notificacao.object.sala.name}}
+							</a>
+						</h2>
 						<p class="text">
-							{{notificacao.actor.name}}</a> {{notificacao.action}} um(a) {{notificacao.object.objectname}} <a href="/{{notificacao.object.baseurl}}/{{notificacao.object.id}}">{{notificacao.object.name}}
+							<a href="#/tab/dash/{{notificacao.object.baseurl}}/{{notificacao.object.id}}"> {{notificacao.actor.name}} {{notificacao.action}} um(a) {{notificacao.object.objectname}} {{notificacao.object.name}}</a>
 						</p>
 					</div>
 				</div>
 			</div>
 		</div>
-
 	</ion-content>
 </ion-view>
