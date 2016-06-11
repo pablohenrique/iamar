@@ -57,6 +57,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
                 }
             })
 
+            .state('tab.dash-provas', {
+                url: '/dash/notificacoes/:notificacaoId',
+                views: {
+                    'tab-dash': {
+                        templateUrl: 'templates/comentarios.html',
+                        controller: 'NotificacaoCtrl'
+                    }
+                }
+            })
+
             .state('tab.chats', {
                 url: '/chats',
                 views: {
