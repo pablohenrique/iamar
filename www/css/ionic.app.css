@@ -9815,21 +9815,51 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
-.card__defaultcard__head--blue {
-  background: Blue; }
+.button-iamar-success {
+  width: 100%;
+  font-size: 14px;
+  font-weight: 700;
+  height: 35px;
+  min-height: 35px;
+  padding-top: 0px;
+  line-height: 0;
+  text-transform: capitalize;
+  margin-top: 5px;
+  background-color: #2DCB71; }
+
+.card__defaultcard__head {
+  display: flex;
+  background: #00BEF3;
+  border-bottom: 5px solid #687C99; }
+  .card__defaultcard__head img.avatar {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 50%; }
+
+.item-body__defaultcard {
+  color: #00BEF3; }
 
 .defaultcard__title {
-  font-weight: 600; }
+  font-weight: 600;
+  color: #00BEF3; }
+  .defaultcard__title h2 {
+    font-weight: 600;
+    color: #00BEF3; }
 
 .defaultcard__body {
-  font-weight: 200; }
+  font-weight: 200;
+  color: #00BEF3; }
+  .defaultcard__body p {
+    font-weight: 200;
+    color: #00BEF3; }
 
 .defaultcard__info .col {
   border-style: solid;
   border-left-width: 1px;
   border-right-width: 1px;
-  border-left-color: #ccc;
-  border-right-color: #ccc; }
+  border-left-color: #E4E7E7;
+  border-right-color: #E4E7E7; }
   .defaultcard__info .col .row {
     text-align: center; }
     .defaultcard__info .col .row span {
@@ -9845,6 +9875,24 @@ a.button {
 .defaultcard__info .col:last-child {
   border-right-width: 0; }
 
+.card__slimcard img:first-child {
+  width: 50px;
+  height: 50px;
+  margin-top: 15px;
+  margin-left: 10px; }
+
+.card__slimcard .item {
+  padding-left: 75px; }
+  .card__slimcard .item h2:first-child {
+    font-family: Montserrat, sans-serif;
+    color: #00BFF3;
+    font-weight: 600;
+    font-size: 14px; }
+  .card__slimcard .item p.text {
+    font-weight: 200;
+    font-size: 12px;
+    color: #00BFF3; }
+
 .card__slimcard .row {
   margin-top: 10px; }
   .card__slimcard .row p {
@@ -9859,6 +9907,37 @@ a.button {
       top: 5px;
       left: 0; }
 
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 300;
+  src: url("../fonts/montserrat-light-webfont.ttf"); }
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 400;
+  src: url("../fonts/montserrat-regular-webfont.ttf"); }
+
+@font-face {
+  font-family: 'Montserrat';
+  font-weight: 700;
+  src: url("../fonts/montserrat-bold-webfont.ttf"); }
+
+html,
+body,
+ion-tabs,
+.tab-nav,
+h1, h2, h3, h4, h5, h6,
+p, a,
+.tab-nav a {
+  font-family: Montserrat, sans-serif !important; }
+
+body {
+  background: url("../img/adam.jpg") repeat; }
+
+.eizap-title {
+  max-height: 30px;
+  font-size: 13px; }
+
 .txtcenter {
   text-align: center; }
 
@@ -9867,3 +9946,44 @@ a.button {
 
 .noborder {
   border: none !important; }
+
+.icon-doc:before,
+.icon-presentation:before,
+.icon-groups:before,
+.icon-trophy:before,
+.icon-doc-active:before,
+.icon-presentation-active:before,
+.icon-groups-active:before,
+.icon-trophy-active:before {
+  display: block;
+  width: 100%;
+  height: 28px;
+  content: ".";
+  text-indent: 9999px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 1px; }
+
+.icon-doc:before {
+  background-image: url("../img/doc.svg"); }
+
+.icon-presentation:before {
+  background-image: url("../img/presentation.svg"); }
+
+.icon-groups:before {
+  background-image: url("../img/group.svg"); }
+
+.icon-trophy:before {
+  background-image: url("../img/trophy.svg"); }
+
+.icon-doc-active:before {
+  background-image: url("../img/doc-filled.svg"); }
+
+.icon-presentation-active:before {
+  background-image: url("../img/presentation-filled.svg"); }
+
+.icon-groups-active:before {
+  background-image: url("../img/group-filled.svg"); }
+
+.icon-trophy-active:before {
+  background-image: url("../img/trophy-filled.svg"); }

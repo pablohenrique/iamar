@@ -1,13 +1,13 @@
 <ion-view view-title="Dashboard">
 
 	<ion-nav-title>
-		<div class="row">
-			<div class="col">
+		<div class="row eizap-title">
+			<div class="col" style="margin-top: -10px;">
 				<a href="#">
 					Fernando Garcia
 				</a>
 			</div>
-			<div class="col" style="text-align: right;">
+			<div class="col" style="text-align: right;margin-top: -10px;">
 				<a href="#">
 					<img src="./img/strata-ios-grouplist.svg" alt="" style="height: 10px;">
 					<span>234</span>
@@ -20,21 +20,108 @@
 	<ion-content class="padding">
 
 		<div class="card card__texticons">
-			<div class="item item-text-wrap noborder">
+			<div class="item item-text-wrap noborder" style="font-weight: 600;
+    color: #00BFF3;
+    font-size: 14px;     padding-bottom: 3px;">
 				This is a basic Card which contains an item that has wrapping text.
+			</div>
+			<div class="item item-text-wrap noborder" style="color: #00BFF3; padding: 0 15px;font-weight: 200;">
+				<p style="color: #00BFF3;">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				</p>
 			</div>
 			<div class="row">
 				<div class="col">
-					<p style="margin-top: 12px;">
-						<a href="#" class="subdued">1 Like</a>
-						<a href="#" class="subdued">5 Comments</a>
+					<p style="margin-top: 12px;    padding-left: 5px;">
+						<a href="#" class="subdued">
+							<img src="./img/like.svg" alt="" style="width: 20px; height: 20px;">
+						</a>
+						<a href="#" class="subdued">
+							<img src="./img/comment.svg" alt="" style="width: 20px; height: 20px;">
+						</a>
 					</p>
 				</div>
 				<div class="col fright txtcenter">
-					<button class="button button-balanced">oi</button>
+					<button class="button button-balanced button-iamar-success" >Ver projeto</button>
 				</div>
 			</div>
 		</div>
+
+
+
+
+
+
+		<div class="list card card__slimcard">
+			<div class="item item-thumbnail-left" href="#">
+				<img src="./img/doccheck.svg">
+				<div class="row" style="">
+					<div class="col">
+						<h2>Pretty Hate Machine</h2>
+						<p class="text">Nine Inch Nails</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+		<div class="list card card__defaultcard ">
+			<div class="item card__defaultcard__head" style="">
+				<img src="./img/avatar-revert.svg" class="avatar">
+			</div>
+			<div class="item item-body item-body__defaultcard noborder">
+				<div class="row defaultcard__info">
+					<div class="col">
+						<div class="row">
+							<span>TITLE</span>
+						</div>
+						<div class="row">
+							<span>number</span>
+						</div>
+					</div>
+					<div class="col">
+						<div class="row">
+							<span>TITLE</span>
+						</div>
+						<div class="row">
+							<span>number</span>
+						</div>
+					</div>
+					<div class="col">
+						<div class="row">
+							<span>TITLE</span>
+						</div>
+						<div class="row">
+							<span>number</span>
+						</div>
+					</div>
+				</div>
+				<div class="row defaultcard__title">
+					<h2>TITLE</h2>
+				</div>
+
+				<div class="row defaultcard__body">
+					<p>
+						This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
+						the content is from a card-body consisting of an image and paragraph text. The footer
+						consists of tabs, icons aligned left, within the card-footer.
+					</p>
+				</div>
+				<!--<div class="row defaultcard__footer">-->
+					<!--<p>-->
+						<!--<a href="#" class="subdued">1 Like</a>-->
+						<!--<a href="#" class="subdued">5 Comments</a>-->
+					<!--</p>-->
+				<!--</div>-->
+			</div>
+		</div>
+
+
+
+
 
 	</ion-content>
 </ion-view>

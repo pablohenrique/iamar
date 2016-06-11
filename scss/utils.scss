@@ -1,3 +1,23 @@
+html,
+body,
+ion-tabs,
+.tab-nav,
+h1, h2, h3, h4, h5, h6,
+p, a,
+.tab-nav a {
+  font-family: Montserrat, sans-serif !important;
+}
+
+body {
+  background: url("../img/adam.jpg") repeat;
+}
+
+.eizap-title {
+  max-height: 30px;
+  font-size: 13px;
+}
+
+
 .txtcenter {
   text-align: center;
 }
@@ -8,4 +28,65 @@
 
 .noborder {
   border: none !important;
+}
+
+.icon-doc,
+.icon-presentation,
+.icon-groups,
+.icon-trophy,
+.icon-doc-active,
+.icon-presentation-active,
+.icon-groups-active,
+.icon-trophy-active {
+  &:before {
+    display: block;
+    width: 100%;
+    height: 28px;
+    content: ".";
+    text-indent: 9999px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 1px;
+  }
+}
+
+.icon-doc{
+  &:before {
+    background-image: url("../img/doc.svg");
+  }
+}
+.icon-presentation{
+  &:before {
+    background-image: url("../img/presentation.svg");
+  }
+}
+.icon-groups{
+  &:before {
+    background-image: url("../img/group.svg");
+  }
+}
+.icon-trophy{
+  &:before {
+    background-image: url("../img/trophy.svg");
+  }
+}
+.icon-doc-active{
+  &:before {
+    background-image: url("../img/doc-filled.svg");
+  }
+}
+.icon-presentation-active{
+  &:before {
+    background-image: url("../img/presentation-filled.svg");
+  }
+}
+.icon-groups-active{
+  &:before {
+    background-image: url("../img/group-filled.svg");
+  }
+}
+.icon-trophy-active{
+  &:before {
+    background-image: url("../img/trophy-filled.svg");
+  }
 }

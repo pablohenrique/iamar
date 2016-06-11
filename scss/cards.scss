@@ -2,19 +2,34 @@
 }
 
 .card__defaultcard__head {
-  &--blue {
-    background: Blue;
+  display: flex;
+  background: #00BEF3;
+  border-bottom: 5px solid #687C99;
+
+  img.avatar {
+    width: 100px;height: 100px;margin: 0 auto;border-radius: 50%;
   }
 }
 
 .item-body__defaultcard {
+  color: #00BEF3;
 }
 
 .defaultcard__title {
   font-weight: 600;
+  color: #00BEF3;
+  h2 {
+    font-weight: 600;
+    color: #00BEF3;
+  }
 }
 .defaultcard__body {
   font-weight: 200;
+  color: #00BEF3;
+  p {
+    font-weight: 200;
+    color: #00BEF3;
+  }
 }
 .defaultcard__footer {}
 
@@ -23,8 +38,8 @@
     border-style: solid;
     border-left-width: 1px;
     border-right-width: 1px;
-    border-left-color: #ccc;
-    border-right-color: #ccc;
+    border-left-color: #E4E7E7;
+    border-right-color: #E4E7E7;
 
     .row {
       text-align: center;
@@ -52,6 +67,28 @@
 
 
 .card__slimcard {
+  img:first-child {
+    width: 50px; height: 50px; margin-top: 15px; margin-left: 10px;
+  }
+
+  .item {
+    padding-left: 75px;
+    h2:first-child {
+      font-family: Montserrat, sans-serif;
+      color: #00BFF3;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+
+    p.text {
+      font-weight: 200;
+      font-size: 12px;
+      color: #00BFF3;
+    }
+
+  }
+
   .row {
     margin-top: 10px;
 
