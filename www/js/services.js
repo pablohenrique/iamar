@@ -204,11 +204,11 @@ Database.prototype.add = function(obj){
 };
 
 var ProfilesDatabase = new Database([
-  new Profile('Adam Smith','img/adam.jpg'),         // 0
-  new Profile('Ben Afflec','img/ben.png'),           // 1
-  new Profile('Mad Max','img/max.png'),
-  new Profile('Mike Tyson','img/mike.png'),
-  new Profile('Perry','img/perry.png'),
+  new Profile('João Ricardo','img/adam.jpg'),         // 0
+  new Profile('André Nascimento','img/ben.png'),           // 1
+  new Profile('Alberto Roberto','img/max.png'),
+  new Profile('Marcelo Silva','img/mike.png'),
+  new Profile('Eduardo Souza','img/perry.png'),
   new Profile('Fernando Garcia','img/perry.png'),    // 5
   new Profile('Filipe Forattini','img/perry.png'),
   new Profile('Pablo Henrique','img/perry.png')
