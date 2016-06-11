@@ -16,12 +16,24 @@
 	</ion-nav-title>
 
 	<ion-content>
+
+		<!--<div class="list card">-->
+			<!--<div class="item item-image">-->
+		<div class="row" style="background: url('./img/bgranking.svg') no-repeat 80%;
+    background-size: cover;
+    height: 85px;"></div>
+			<!--</div>-->
+		<!--</div>-->
+
 		<div class="list">
 		    <a class="item item-remove-animate item-avatar" href="#" ng-repeat="educando in educandos">
 		      <img src="{{ educando.profile.face }}">
 		      <h2>{{ educando.profile.name }}</h2>
-		      <p>Ipsum lorem parem da florem.</p>
-		      <div>{{ educando.profile.coins }}</div>
+		      <!--<p>Ipsum lorem parem da florem.</p>-->
+		      <div>
+			      <img src="./img/coin.svg" alt="" style="height: 12px;width: 12px;">
+			      {{ educando.profile.coins }}
+		      </div>
 		    </a>
 		</div>
 		</ion-list>
