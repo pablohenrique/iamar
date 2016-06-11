@@ -24,41 +24,47 @@
 			{{me.profile.coins}}
 		</h3>
 
-		<div class="list card card__slimcard">
+		<div class="list card card__slimcard" ng-repeat="medalha in me.profile.medalhas">
 			<div class="item item-thumbnail-left" href="#">
 				<img src="./img/trophys.svg">
 				<div class="row" style="">
 					<div class="col">
-						<h2>Empreendedorismo Básico</h2>
-						<p class="text">11/06/2016</p>
+						<h2>{{medalha.name}}</h2>
+						<div class="row">
+							{{medalha.xp}} XP
+						</div>
+						<p style="word-wrap: normal;
+      text-overflow: inherit;
+      white-space: normal;
+      text-transform: capitalize;">{{medalha.descricao}}</p>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="list card card__slimcard">
-			<div class="item item-thumbnail-left" href="#">
-				<img src="./img/trophys.svg">
-				<div class="row" style="">
-					<div class="col">
-						<h2>Reciclagem Inteligente</h2>
-						<p class="text">09/06/2016</p>
-					</div>
-				</div>
-			</div>
-		</div>
+		<!--<div class="list card card__slimcard">-->
+			<!--<div class="item item-thumbnail-left" href="#">-->
+				<!--<img src="./img/trophys.svg">-->
+				<!--<div class="row" style="">-->
+					<!--<div class="col">-->
+						<!--<h2>Reciclagem Inteligente</h2>-->
+						<!--<p class="text">09/06/2016</p>-->
+					<!--</div>-->
+				<!--</div>-->
+			<!--</div>-->
+		<!--</div>-->
 
-		<div class="list card card__slimcard">
-			<div class="item item-thumbnail-left" href="#">
-				<img src="./img/trophys.svg">
-				<div class="row" style="">
-					<div class="col">
-						<h2>Marketing Virtual</h2>
-						<p class="text">05/06/2016</p>
-					</div>
-				</div>
-			</div>
-		</div>
+		<!--<div class="list card card__slimcard">-->
+			<!--<div class="item item-thumbnail-left" href="#">-->
+				<!--<img src="./img/trophys.svg">-->
+				<!--<div class="row" style="">-->
+					<!--<div class="col">-->
+						<!--<h2>Marketing Virtual</h2>-->
+						<!--<p class="text">05/06/2016</p>-->
+					<!--</div>-->
+				<!--</div>-->
+			<!--</div>-->
+		<!--</div>-->
 
 	</ion-content>
 </ion-view>

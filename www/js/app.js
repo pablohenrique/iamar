@@ -77,6 +77,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
                 }
             })
 
+            .state('tab.chats-video', {
+                url: '/chats/video',
+                views: {
+                    'tab-chats': {
+                        templateUrl: 'templates/video.html',
+                        controller: 'VideoCtrl'
+                    }
+                }
+            })
+
             //.state('tab.chats', {
             //    url: '/chats',
             //    views: {
