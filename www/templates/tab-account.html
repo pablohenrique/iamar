@@ -3,13 +3,13 @@
 		<div class="row eizap-title">
 			<div class="col" style="margin-top: -10px;">
 				<a href="#">
-					Fernando Garcia
+					{{ user.name }}
 				</a>
 			</div>
 			<div class="col" style="text-align: right;margin-top: -10px;">
 				<a href="#">
-					<img src="./img/coin.svg" alt="" style="height: 12px;">
-					<span>234</span>
+					<img src="./img/coin.svg" alt="" style="height: 10px;">
+					<span>{{ user.coins }}</span>
 				</a>
 			</div>
 		</div>
@@ -17,9 +17,110 @@
 
 	<ion-content>
 		<ion-list>
-			<ion-toggle ng-model="settings.enableFriends">
-				Enable Friends
-			</ion-toggle>
+
+			<div class="list card card__defaultcard ">
+				<div class="item card__defaultcard__head" style="">
+					<img src="./img/avatar-revert.svg" class="avatar">
+				</div>
+				<div class="item item-body item-body__defaultcard noborder">
+					<div class="row defaultcard__info">
+						<div class="col">
+							<div class="row">
+							<span>
+								<img src="./img/like.svg" alt="">
+							</span>
+							</div>
+							<div class="row">
+								<span>123</span>
+							</div>
+						</div>
+						<div class="col">
+							<div class="row">
+							<span>
+								<img src="./img/comment.svg" alt="">
+							</span>
+							</div>
+							<div class="row">
+								<span>0</span>
+							</div>
+						</div>
+						<div class="col">
+							<div class="row">
+							<span>
+								<img src="./img/share.svg" alt="">
+							</span>
+							</div>
+							<div class="row">
+								<span>56</span>
+							</div>
+						</div>
+					</div>
+					<div class="row defaultcard__title">
+						<h2>TITLE</h2>
+					</div>
+					<div class="row defaultcard__body">
+						<p>
+							This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
+							the content is from a card-body consisting of an image and paragraph text. The footer
+							consists of tabs, icons aligned left, within the card-footer.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="list card card__defaultcard ">
+				<div class="item card__defaultcard__head" style="">
+					<img src="./img/avatar-revert.svg" class="avatar">
+				</div>
+				<div class="item item-body item-body__defaultcard noborder">
+					<div class="row defaultcard__info">
+						<div class="col">
+							<div class="row">
+							<span>
+								<img src="./img/like.svg" alt="">
+							</span>
+							</div>
+							<div class="row">
+								<span>322</span>
+							</div>
+						</div>
+						<div class="col">
+							<div class="row">
+							<span>
+								<img src="./img/comment.svg" alt="">
+							</span>
+							</div>
+							<div class="row">
+								<span>0</span>
+							</div>
+						</div>
+						<div class="col">
+							<div class="row">
+							<span>
+								<img src="./img/share.svg" alt="">
+							</span>
+							</div>
+							<div class="row">
+								<span>122</span>
+							</div>
+						</div>
+					</div>
+					<div class="row defaultcard__title">
+						<h2>TITLE</h2>
+					</div>
+					<div class="row defaultcard__body">
+						<p>
+							This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
+							the content is from a card-body consisting of an image and paragraph text. The footer
+							consists of tabs, icons aligned left, within the card-footer.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<!--<ion-toggle ng-model="settings.enableFriends">-->
+				<!--Enable Friends-->
+			<!--</ion-toggle>-->
 		</ion-list>
 	</ion-content>
 </ion-view>
