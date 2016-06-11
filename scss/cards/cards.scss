@@ -1,19 +1,76 @@
-.card__defaultcard{}
+.card__defaultcard {
+}
 
-.item-body__defaultcard{
-  .defaultcard__info{
-    .col {
-      border-style: solid;
-      border-left-width: 1px;
-      border-right-width: 1px;
-      border-left-color: #ccc;
-      border-right-color: #ccc;
+.card__defaultcard__head {
+  &--blue {
+    background: Blue;
+  }
+}
+
+.item-body__defaultcard {
+}
+
+.defaultcard__title {
+  font-weight: 600;
+}
+.defaultcard__body {
+  font-weight: 200;
+}
+.defaultcard__footer {}
+
+.defaultcard__info {
+  .col {
+    border-style: solid;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-left-color: #ccc;
+    border-right-color: #ccc;
+
+    .row {
+      text-align: center;
+      span {
+        width: 100%;
+      }
     }
-    .col:first-child {
-      border-left-width: 0;
+
+    .row:first-child {
+      font-weight: 600;
     }
-    .col:last-child {
-      border-right-width: 0;
+
+    .row:last-child {
+      font-weight: 200;
+    }
+
+  }
+  .col:first-child {
+    border-left-width: 0;
+  }
+  .col:last-child {
+    border-right-width: 0;
+  }
+}
+
+
+.card__slimcard {
+  .row {
+    margin-top: 10px;
+
+    p {
+      position: relative;
+      padding-left: 15px;
+      &:before{
+        content: '';
+        background: url('../img/strata-ios-grouplist.svg') no-repeat;
+        position: absolute;
+        height: 10px;
+        width: 14px;
+        top: 5px;
+        left: 0;
+      }
     }
   }
+}
+
+.card__texticons {
+
 }

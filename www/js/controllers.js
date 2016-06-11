@@ -29,7 +29,7 @@ angular.module('starter.controllers', [])
     })
 
     .controller('OtherCtrl', function ($scope) {
-        //$scope.settings = {
-        //    enableFriends: true
-        //};
+        $scope.settings = {
+            enableFriends: true
+        };
     });
