@@ -9854,6 +9854,10 @@ a.button {
     font-weight: 200;
     color: #00BEF3; }
 
+.defaultcard__info img {
+  width: 20px;
+  height: 20px; }
+
 .defaultcard__info .col {
   border-style: solid;
   border-left-width: 1px;
@@ -9906,6 +9910,26 @@ a.button {
       width: 14px;
       top: 5px;
       left: 0; }
+
+.card__texticons .title {
+  font-weight: 600;
+  color: #00BFF3;
+  font-size: 14px;
+  padding-bottom: 3px; }
+
+.card__texticons .body {
+  color: #00BFF3;
+  padding: 0 15px;
+  font-weight: 200; }
+  .card__texticons .body p {
+    color: #00BFF3; }
+
+.card__texticons .p-icons {
+  margin-top: 12px;
+  padding-left: 5px; }
+  .card__texticons .p-icons img {
+    width: 20px;
+    height: 20px; }
 
 @font-face {
   font-family: 'Montserrat';

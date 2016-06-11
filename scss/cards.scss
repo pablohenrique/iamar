@@ -34,6 +34,12 @@
 .defaultcard__footer {}
 
 .defaultcard__info {
+
+  img {
+    width: 20px;
+    height: 20px;
+  }
+
   .col {
     border-style: solid;
     border-left-width: 1px;
@@ -109,5 +115,29 @@
 }
 
 .card__texticons {
+  .title {
+    font-weight: 600;
+    color: #00BFF3;
+    font-size: 14px;
+    padding-bottom: 3px;
+  }
+
+  .body {
+    color: #00BFF3;
+    padding: 0 15px;
+    font-weight: 200;
+    p {
+      color: #00BFF3;
+    }
+  }
+
+
+  .p-icons {
+    margin-top: 12px;
+    padding-left: 5px;
+    img {
+      width: 20px; height: 20px;
+    }
+  }
 
 }
