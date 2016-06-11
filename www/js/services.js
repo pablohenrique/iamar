@@ -57,13 +57,16 @@ function Profile(name, face, owner) {
   this.name = name;
   this.face = face;
   this.coins = 0;
+  this.points = 0;
   this.notificacoes = [];
+  this.medalhas = [];
 };
 
 function Educando(profile, salas) {
   this.objectname = 'educando';
   this.baseurl = 'educandos';
   this.profile = profile;
+  profile.owner = this;
   this.salas = [];
   if(salas) this.salas = salas;
 };
@@ -72,6 +75,7 @@ function Educador(profile, salas) {
   this.objectname = 'educador';
   this.baseurl = 'educadores';
   this.profile = profile;
+  profile.owner = this;
   this.salas = [];
   if(salas) this.salas = salas;
 };
@@ -80,16 +84,35 @@ function Voluntario(profile) {
   this.objectname = 'voluntario';
   this.baseurl = 'voluntários';
   this.profile = profile;
+  profile.owner = this;
 };
 
-function Sala(name, educadores, educandos) {
+function Sala(name, educadores, educandos, provas) {
   this.objectname = 'sala';
   this.baseurl = 'salas';
   this.name = name;
   this.educadores = [];
   this.educandos = [];
-  if(educadores) this.educadores = educadores;
-  if(educandos) this.educandos = educandos;
+  this.provas = [];
+  if(educadores) {
+    for (var i = 0; i < educadores.length; i++) {
+      educadores[i].salas.push(this);
+    }
+    this.educadores = educadores;
+  }
+  if(educandos) {
+    for (var i = 0; i < educandos.length; i++) {
+      educandos[i].salas.push(this);
+    }
+    this.educandos = educandos;
+  }
+  if(provas) {
+    for (var i = 0; i < provas.length; i++) {
+      provas[i].sala = this;
+    }
+    this.provas = provas;
+  }
+  this.comentarios = [];
 }
 
 function Prova(name, sala) {
@@ -97,6 +120,8 @@ function Prova(name, sala) {
   this.baseurl = 'provas';
   this.name = name;
   this.sala = sala;
+  sala.provas.push(this);
+  this.comentarios = [];
 }
 
 function Notificacao(actor, action, object, observers, preview) {
@@ -105,16 +130,50 @@ function Notificacao(actor, action, object, observers, preview) {
   this.actor = actor;
   this.object = object;
   this.action = action;
-  this.observers = [];
-  if(observers) this.observers = observers;
   this.preview = preview;
   this.created_at = new Date();
+  this.comentarios = [];
+
+  this.observers = [];
+  if(observers) {
+    for (var i = 0; i < observers.length; i++) {
+      if(observers[i].hasOwnProperty('notificacoes')) {
+        observers[i].notificacoes.push(this);
+      } else {
+        if(observers[i].hasOwnProperty('profile')) {
+          observers[i].profile.notificacoes.push(this);
+        }
+      }
+      this.observers = observers;
+    }
+  }
 }
 
-function Medalha(nome) {
+function Medalha(name, descricao, icon, xp) {
   this.objectname = 'medalha';
   this.baseurl = 'medalhas';
-  this.nome;
+  this.name = name;
+  this.descricao = descricao;
+  this.icon = icon;
+  this.xp = xp;
+  this.comentarios = [];
+}
+
+function Comentario(object, profile, text, date) {
+  this.objectname = 'comentario';
+  this.baseurl = 'comentarios';
+  this.object = object;
+  this.profile = profile;
+  this.text = text;
+  this.data = date;
+  object.comentarios.push(this);
+}
+
+function Projeto(name) {
+  this.objectname = 'medalha';
+  this.baseurl = 'medalhas';
+  this.name = name;
+  this.comentarios = [];
 }
 
 // DATABASES
@@ -163,21 +222,11 @@ var EducandosDatabase = new Database([
   new Educando(ProfilesDatabase.find(4)),
 ]);
 
-ProfilesDatabase.find(0).owner = EducandosDatabase.find(0);
-ProfilesDatabase.find(1).owner = EducandosDatabase.find(1);
-ProfilesDatabase.find(2).owner = EducandosDatabase.find(2);
-ProfilesDatabase.find(3).owner = EducandosDatabase.find(3);
-ProfilesDatabase.find(4).owner = EducandosDatabase.find(4);
-
 var EducadoresDatabase = new Database([
   new Educador(ProfilesDatabase.find(5)),
   new Educador(ProfilesDatabase.find(6)),
   new Educador(ProfilesDatabase.find(7))
 ]);
-
-ProfilesDatabase.find(5).owner = EducadoresDatabase.find(0);
-ProfilesDatabase.find(6).owner = EducadoresDatabase.find(1);
-ProfilesDatabase.find(7).owner = EducadoresDatabase.find(2);
 
 var SalasDatabase = new Database([
   new Sala('Curso: Como falar em público', [
@@ -196,32 +245,30 @@ var SalasDatabase = new Database([
   ])
 ]);
 
-EducadoresDatabase.find(0).salas.push(SalasDatabase.find(0));
-EducandosDatabase.find(0).salas.push(SalasDatabase.find(0));
-EducandosDatabase.find(1).salas.push(SalasDatabase.find(0));
-EducandosDatabase.find(2).salas.push(SalasDatabase.find(0));
-
 var ProvasDatabase = new Database([
-  new Prova('Pitch #1',SalasDatabase.find(0)),
+  new Prova('Como fazer um Pitch',SalasDatabase.find(0)),
   new Prova('Demonstração Financeira',SalasDatabase.find(1))
 ]);
 
 var MedalhasDatabase = new Database([
-  new Medalha('Caçador de Zaps!', 'Faça 10x logins em um dia!', 100),
-  new Medalha('Destruidor de provas!', 'Fechou prova com 100%! Só não tirou mais porque não tinha mais questões.', 230),
-  new Medalha('Zerando o ano!','Passe em dois semestres consecutivos com todas notas acima de 60%', 300)
+  new Medalha('Caçador de Zaps!', 'Faça 10x logins em um dia!', 'img/m1.png', 100),
+  new Medalha('Destruidor de provas!', 'Fechou prova com 100%! Só não tirou mais porque não tinha mais questões.', 'img/m2.png', 230),
+  new Medalha('Zerando o ano!','Passe em dois semestres consecutivos com todas notas acima de 60%', 'img/m3.png', 300)
 ]);
+
+ProfilesDatabase.find(0).medalhas.push(MedalhasDatabase.find(0));
+ProfilesDatabase.find(0).medalhas.push(MedalhasDatabase.find(1));
+ProfilesDatabase.find(0).medalhas.push(MedalhasDatabase.find(2));
 
 var NotificacoesDatabase = new Database([
   new Notificacao(ProfilesDatabase.find(1), 'conquistou', MedalhasDatabase.find(0)),
   new Notificacao(ProfilesDatabase.find(6), 'criou', ProvasDatabase.find(0), ProvasDatabase.find(0).sala.educandos),
   new Notificacao(ProfilesDatabase.find(2), 'conquistou', MedalhasDatabase.find(1)),
   new Notificacao(ProfilesDatabase.find(7), 'modificou', ProvasDatabase.find(1), ProvasDatabase.find(1).sala.educandos),
-  new Notificacao(ProfilesDatabase.find(3), 'conquistou', MedalhasDatabase.find(2)),
+  new Notificacao(ProfilesDatabase.find(3), 'conquistou', MedalhasDatabase.find(2))
 ]);
 
-ProfilesDatabase.find(0).notificacoes.push(NotificacoesDatabase.find(0));
-ProfilesDatabase.find(0).notificacoes.push(NotificacoesDatabase.find(1));
-ProfilesDatabase.find(0).notificacoes.push(NotificacoesDatabase.find(2));
-ProfilesDatabase.find(0).notificacoes.push(NotificacoesDatabase.find(3));
-ProfilesDatabase.find(0).notificacoes.push(NotificacoesDatabase.find(4));
+var ProjetosDatabase = new Database([
+  new Projeto('Recilagem com eficinência'),
+  new Projeto('Recilagem com eficinência')
+]);
