@@ -51,12 +51,14 @@ angular.module('starter.services', [])
 
 // MODELS
 
-function Profile(name, face, owner) {
+function Profile(name, face, coins) {
   this.objectname = 'perfil';
   this.baseurl = 'perfis';
   this.name = name;
   this.face = face;
   this.coins = 0;
+  if(coins)
+    this.coins = coins;
   this.points = 0;
   this.notificacoes = [];
   this.medalhas = [];
@@ -204,10 +206,10 @@ Database.prototype.add = function(obj){
 };
 
 var ProfilesDatabase = new Database([
-  new Profile('João Ricardo','img/adam.jpg'),         // 0
-  new Profile('André Nascimento','img/ben.png'),           // 1
-  new Profile('Alberto Roberto','img/max.png'),
-  new Profile('Marcelo Silva','img/mike.png'),
+  new Profile('João Ricardo','img/adam.jpg', 450),         // 0
+  new Profile('André Nascimento','img/ben.png', 300),           // 1
+  new Profile('Alberto Roberto','img/max.png', 200),
+  new Profile('Marcelo Silva','img/mike.png', 150),
   new Profile('Eduardo Souza','img/perry.png'),
   new Profile('Fernando Garcia','img/perry.png'),    // 5
   new Profile('Filipe Forattini','img/perry.png'),
