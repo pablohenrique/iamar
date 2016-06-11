@@ -9891,11 +9891,17 @@ a.button {
     font-family: Montserrat, sans-serif;
     color: #00BFF3;
     font-weight: 600;
-    font-size: 14px; }
+    font-size: 14px;
+    word-wrap: normal;
+    text-overflow: inherit;
+    white-space: normal; }
   .card__slimcard .item p.text {
     font-weight: 200;
     font-size: 12px;
-    color: #00BFF3; }
+    color: #00BFF3;
+    word-wrap: normal;
+    text-overflow: inherit;
+    white-space: normal; }
 
 .card__slimcard .row {
   margin-top: 10px; }
@@ -9955,8 +9961,9 @@ p, a,
 .tab-nav a {
   font-family: Montserrat, sans-serif !important; }
 
-body {
-  background: url("../img/adam.jpg") repeat; }
+a {
+  color: #00BFF3 !important;
+  text-decoration: none; }
 
 .eizap-title {
   max-height: 30px;

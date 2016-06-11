@@ -9,7 +9,7 @@
 			</div>
 			<div class="col" style="text-align: right;margin-top: -10px;">
 				<a href="#">
-					<img src="./img/strata-ios-grouplist.svg" alt="" style="height: 10px;">
+					<img src="./img/coin.svg" alt="" style="height: 10px;">
 					<span>{{ user.coins }}</span>
 				</a>
 			</div>
@@ -17,6 +17,22 @@
 	</ion-nav-title>
 
 	<ion-content class="padding">
+
+		<div class="list card card__slimcard" ng-repeat="(index,notificacao) in user.notificacoes">
+			<div class="item item-thumbnail-left" href="#">
+				<img src="./img/doccheck.svg">
+				<div class="row" style="">
+					<div class="col">
+						<h2>Prova {{index+1}} - Sala {{notificacao.object.sala.name}}</h2>
+						<p class="text">
+							{{notificacao.actor.name}}</a> {{notificacao.action}} um(a) {{notificacao.object.objectname}} <a href="/{{notificacao.object.baseurl}}/{{notificacao.object.id}}">{{notificacao.object.name}}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
 
 		<div class="list card" ng-repeat="notificacao in user.notificacoes">
 
