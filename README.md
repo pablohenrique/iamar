@@ -1,7 +1,7 @@
 IAMAR Hackathon Project
 =====================
 
-This is an ionic based project.
+This is an ionic based project. It was used to create a project for the IAMAR organization. This porject won the second place on IAMAR Hackathon.
 
 ## Using this project
 
