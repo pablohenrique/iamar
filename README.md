@@ -5,19 +5,28 @@ This is an ionic based project.
 
 ## Using this project
 
-To start a new Ionic project with the default tabs interface, make sure the `ionic` utility is installed:
-
+First of all, isntall cordova & ionic:
 ```bash
-$ npm install -g ionic
+$ npm i -g cordova ionic@1.7.0
 ```
 
-Then run: 
-
+Then install the project dependencies:
 ```bash
-$ ionic start myProject tabs
+$ cd IAMAR-Hackathon-Project && npm i
 ```
 
-More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/getting-started) page and the [Ionic CLI](https://github.com/driftyco/ionic-cli) repo.
+To start this project and run it on Google Chrome:
 
-## Issues
-Issues have been disabled on this repo, if you do find an issue or have a question consider posting it on the [Ionic Forum](http://forum.ionicframework.com/).  Or else if there is truly an error, follow our guidelines for [submitting an issue](http://ionicframework.com/submit-issue/) to the main Ionic repository.
+```bash
+$ ionic serve
+```
+
+Or run it on an emulator:
+
+```bash
+$ ionic run
+```
+
+
+## How does it look?
+![tag](screenshots/iamar.png)
